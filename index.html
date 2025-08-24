@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Local imports -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+
+    <!-- Leaflet.js imports -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <title>Leaflet.js test</title>
+</head>
+
+<body>
+    <button id="togglePanel">☰ Data</button>
+    <aside id="panel" aria-hidden="true">
+        <header>
+            <span>Earthquake Table</span>
+            <button id="closePanel" aria-label="Close">✕</button>
+        </header>
+        <div class="body" id="panelBody">
+            <!-- inside #panel .body -->
+            <table id="eqTable">
+                <thead>
+                    <tr>
+                        <th>Mag</th>
+                        <th>Place</th>
+                        <th>Time</th>
+                        <th>Lat</th>
+                        <th>Lon</th>
+                    </tr>
+                </thead>
+                <tbody id="eqTbody"></tbody>
+            </table>
+
+        </div>
+    </aside>
+    <div id="map_div"></div>
+</body>
+
+<script>
+    initMap();
+    enableRowClicks();
+    (async () => {
+        await fillPanelWithQuakes();  // fetch + build rows
+        plotFromTable();              // draw markers
+    })();
+</script>
+
+</html>

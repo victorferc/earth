@@ -1,0 +1,10 @@
+TODO:
+Format table
+Make UI beautiful and responsive using React
+
+DONE:
+Base leaflet map is set up.
+Put basic earthquake data into table
+Make table appear and disappear
+Plot coordinate points from table on the map
+Figure out how to plot points on the map using latitude and longitude.
