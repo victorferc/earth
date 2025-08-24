@@ -8,3 +8,5 @@ Put basic earthquake data into table
 Make table appear and disappear
 Plot coordinate points from table on the map
 Figure out how to plot points on the map using latitude and longitude.
+
+DEV TEST
